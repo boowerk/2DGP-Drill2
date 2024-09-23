@@ -1,4 +1,5 @@
 from pico2d import *
+import math 
 
 open_canvas()
 
@@ -30,5 +31,24 @@ while (x > 100):
     x -= 2
     y -= 2
     delay(0.01)
+
+center_x = 400
+center_y = 300
+radius = 200
+
+angle = 0
+
+while (angle < 360):
+    clear_canvas_now()
+    grass.draw_now(400, 30)    
+    
+    x = center_x + radius * math.cos(math.radians(angle))
+    y = center_y + radius * math.sin(math.radians(angle))
+    character.draw_now(x, y)
+
+    angle += 1
+    delay(0.01)
+
+
 
 close_canvas()
